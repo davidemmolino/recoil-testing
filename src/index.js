@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { RecoilRoot } from 'recoil';
+import RecoilizeDebugger from 'recoilize';
+import * as nodes from './store/atoms.js';
+
+const root = document.getElementById('root');
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <RecoilRoot>
+    <RecoilizeDebugger nodes={nodes} root={root} />
     <App id="char-containter" />
-  </React.StrictMode>,
+  </RecoilRoot>,
+
   document.getElementById('root')
 );
 
